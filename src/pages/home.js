@@ -5,7 +5,7 @@ import { ROUTE_BOOKING } from "../utils/constant";
 const HomePage = () => {
   return (
     <>
-      <h1 className={styles.title}>Тестовое задание для стажировки в Vk</h1>
+      <h1 className={styles.title}>Профильное задание для стажировки в Vk</h1>
       <Link to={ROUTE_BOOKING}>
         <button className={styles.button}>Начать бронирование</button>
       </Link>
