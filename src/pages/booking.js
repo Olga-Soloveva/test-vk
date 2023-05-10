@@ -1,7 +1,8 @@
 import styles from "./styles/page.module.css";
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useRef } from "react";
 import { arrayNumber } from "../utils/utils";
 import { useFormWithValidation } from "../hooks/useFormWithValidation";
+import { TODAY } from "../utils/constant";
 
 const BookingPage = () => {
   const { values, setValues, handleChange, isValidForm, setIsValidForm } =
@@ -10,6 +11,7 @@ const BookingPage = () => {
   const [resetButtonActive, setResetButtonActive] = useState(false);
   const [isDataSent, setIsDataSent] = useState(false);
   const [isDataCorrect, setIsDataCorrect] = useState(true);
+  const [isPeriodCorrect, setIsPeriodCorrect] = useState(true);
 
   const floorOptions = useMemo(() => {
     return arrayNumber(3, 27);
@@ -31,14 +33,23 @@ const BookingPage = () => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    if (values.startDate < values.finishDate) {
-      setIsDataCorrect(true);
+    if (
+      values.startDate < values.finishDate &&
+      values.startDate > TODAY &&
+      values.finishDate > TODAY
+    ) {
       console.log(JSON.stringify(values));
       handleReset(evt);
       setIsDataSent(true);
+      setIsPeriodCorrect(true);
       setIsDataCorrect(true);
     } else {
-      setIsDataCorrect(false);
+      if (values.startDate > values.finishDate) {
+        setIsPeriodCorrect(false);
+      }
+      if (values.startDate < TODAY || values.finishDate < TODAY) {
+        setIsDataCorrect(false);
+      }
       setIsValidForm(false);
     }
   };
@@ -177,10 +188,17 @@ const BookingPage = () => {
         ) : (
           ""
         )}
-        {!isDataCorrect ? (
+        {!isPeriodCorrect ? (
           <p className={styles.text_warning}>
             Дата окончания бронирования должна быть позже даты начала
             бронирования
+          </p>
+        ) : (
+          ""
+        )}
+        {!isDataCorrect ? (
+          <p className={styles.text_warning}>
+            Даты бронирования должны быть позднее сегодняшней даты
           </p>
         ) : (
           ""

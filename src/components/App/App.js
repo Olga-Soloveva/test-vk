@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import { ROUTE_HOME, ROUTE_BOOKING } from "../../utils/constant";
 
 function App() {
+
   return (
     <main className={styles.main}>
       <Routes>
