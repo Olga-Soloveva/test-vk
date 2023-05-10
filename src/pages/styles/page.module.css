@@ -32,7 +32,7 @@
 .button_text {
   color: #ff8120;
   background-color: transparent;
-  border: 0; 
+  border: 0;
   text-decoration: underline;
   font-size: 18px;
   transition: color 0.3s ease-in-out;
@@ -41,6 +41,36 @@
 .button_text:hover {
   cursor: pointer;
   color: #a24c09;
+}
+
+.button_text:disabled {
+  color: #3e342d;
+  cursor: not-allowed;
+}
+
+.text_container {
+  height: 50px;
+  width: 600px;
+  box-sizing: border-box;
+  margin: 50px 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text_info {
+  color: #ff8120;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.text_warning {
+  color: #e20716;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
 }
 
 .form {
