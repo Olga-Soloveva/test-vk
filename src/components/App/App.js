@@ -2,7 +2,7 @@ import styles from "./app.module.css";
 import HomePage from "../../pages/home.js";
 import BookingPage from "../../pages/booking";
 import { Routes, Route } from "react-router-dom";
-import { ROUTE_HOME, ROUTE_BOOKING, ROUTE_INFO } from "../../utils/constant";
+import { ROUTE_HOME, ROUTE_BOOKING } from "../../utils/constant";
 
 function App() {
   return (

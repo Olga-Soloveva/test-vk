@@ -23,6 +23,26 @@
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+.button:disabled {
+  border: #3e342d 3px solid;
+  color: #3e342d;
+  cursor: not-allowed;
+}
+
+.button_text {
+  color: #ff8120;
+  background-color: transparent;
+  border: 0; 
+  text-decoration: underline;
+  font-size: 18px;
+  transition: color 0.3s ease-in-out;
+}
+
+.button_text:hover {
+  cursor: pointer;
+  color: #a24c09;
+}
+
 .form {
   display: flex;
   flex-direction: column;
