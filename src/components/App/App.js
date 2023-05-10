@@ -12,7 +12,6 @@ function App() {
         <Route path={ROUTE_BOOKING} element={<BookingPage />} />
       </Routes>
     </main>
-
   );
 }
 

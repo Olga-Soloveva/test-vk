@@ -9,7 +9,7 @@ export function useFormWithValidation() {
     const name = target.name;
     const value = target.value;
     setValues({ ...values, [name]: value });
-    setIsValidForm((target.closest("form")).checkValidity());
+    setIsValidForm(target.closest("form").checkValidity());
   };
 
   return {
@@ -17,6 +17,6 @@ export function useFormWithValidation() {
     setValues,
     handleChange,
     isValidForm,
-    setIsValidForm
+    setIsValidForm,
   };
 }
