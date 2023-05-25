@@ -4,7 +4,7 @@
 Профильное задание для стажировки в VK
 
 ## Посмотреть проект
-[https://olga-soloveva.github.io/test-vk/index.html]
+[https://olga-soloveva.github.io/test-vk/]
 
 ## Инструкция по развёртыванию и системные требования
 `npm install` — установить зависимости   
